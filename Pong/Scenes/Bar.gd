@@ -15,11 +15,12 @@ func _ready():
 func _process(delta):
 	if(!isAI):
 		Movement(delta)
-	#else:
-		#position.y = ball.position.y
 
 func SetPosition(pos):
 	position = pos
+
+func SetYPosition(pos):
+	position.y = pos
 
 func Movement(delta):
 	var velocity = Vector2()
