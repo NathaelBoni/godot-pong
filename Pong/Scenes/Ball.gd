@@ -15,7 +15,6 @@ func _ready():
 	position.x = screensize.x/2
 	position.y = screensize.y/2
 	direction.x = -1
-	direction.y = 1
 	
 func _process(delta):
 	direction = direction.normalized() * SPEED
