@@ -113,9 +113,9 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 shape = SubResource( 2 )
 
-[connection signal="fromBar" from="Bar1" to="Ball" method="_on_Bar1"]
+[connection signal="fromBar" from="Bar1" to="Ball" method="_on_Bar1_fromBar"]
 
-[connection signal="fromBar" from="Bar2" to="Ball" method="_on_Bar2"]
+[connection signal="fromBar" from="Bar2" to="Ball" method="_on_Bar2_fromBar"]
 
 [connection signal="area_entered" from="UpperLimit" to="Ball" method="_on_UpperLimit_area_entered"]
 

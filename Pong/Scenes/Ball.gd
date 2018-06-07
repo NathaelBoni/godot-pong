@@ -1,5 +1,6 @@
 extends Area2D
 
+signal score(team)
 
 var blueBall = load("res://Images/ball_blue.png")
 var redBall = load("res://Images/ball_red.png")
@@ -24,27 +25,26 @@ func _process(delta):
 func SetTexture(param):
 	$Sprite.texture = param
 
-func _on_Bar1():
-	direction.x = -direction.x
-	SPEED += 10
-	SetTexture(blueBall)
-
-func _on_Bar2():
-	direction.x = -direction.x
-	SPEED += 10
-	SetTexture(redBall)
-
 func _on_UpperLimit_area_entered(area):
-	print(area)
 	direction.y = -direction.y
 
 func _on_LowerLimit_area_entered(area):
-	print(area)
 	direction.y = -direction.y
 
-
 func _on_LeftLimit_area_entered(area):
-	print("OnLeft")
+	emit_signal("score", 2)
 
 func _on_RightLimit_area_entered(area):
-	print("OnRight")
+	emit_signal("score", 1)
+
+func _on_Bar1_fromBar(barPosition):
+	direction = position-barPosition
+	if(SPEED < 500):
+		SPEED += 10
+	SetTexture(blueBall)
+
+func _on_Bar2_fromBar(barPosition):
+	direction = position-barPosition
+	if(SPEED < 500):
+		SPEED += 10
+	SetTexture(redBall)

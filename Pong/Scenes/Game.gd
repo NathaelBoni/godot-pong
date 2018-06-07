@@ -17,9 +17,9 @@ func _ready():
 
 func _process(delta):
 	if($Bar1.isAI):
-		$Bar1.SetYPosition($Ball.position.y)
+		$Bar1.SetAIPosition(delta, $Ball.position)
 	if($Bar2.isAI):
-		$Bar2.SetYPosition($Ball.position.y)
+		$Bar2.SetAIPosition(delta, $Ball.position)
 
 func positionIA(pos):
 	pass
