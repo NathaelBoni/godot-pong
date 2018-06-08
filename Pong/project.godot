@@ -13,10 +13,15 @@ config_version=3
 config/name="Pong"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scenes/Global.gd"
+
 [display]
 
 window/size/width=640
 window/size/height=300
+window/size/resizable=false
 
 [rendering]
 
