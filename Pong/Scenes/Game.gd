@@ -20,7 +20,7 @@ func _process(delta):
 		$Bar1.SetAIPosition(delta, $Ball.position)
 	if($Bar2.isAI):
 		$Bar2.SetAIPosition(delta, $Ball.position)
-
+	
 func _on_LeftLimit_area_entered(area):
 	Score("right")
 

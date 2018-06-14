@@ -27,19 +27,19 @@ func _on_LowerLimit_area_entered(area):
 	direction.y = -direction.y
 
 func _on_Bar1_fromBar(barPosition):
-	direction = position-barPosition
-	if(SPEED < 500):
-		SPEED += 10
-	SetTexture(blueBall)
+	hitBack(barPosition, blueBall)
 
 func _on_Bar2_fromBar(barPosition):
+	hitBack(barPosition, redBall)
+	
+func hitBack(barPosition, texture):
 	direction = position-barPosition
-	if(SPEED < 500):
+	if(SPEED < 600 && Global.isBallAccel):
 		SPEED += 10
-	SetTexture(redBall)
+	SetTexture(texture)
 
 func _on_Game_startGame():
-	SPEED = 300
+	SPEED = Global.ballV0
 	ResetPosition()
 	direction.x = -1
 	direction.y = 0
