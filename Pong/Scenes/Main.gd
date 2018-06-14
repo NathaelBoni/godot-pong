@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$Pause.hide()
 	$Game.StartTimer()
 
 func _on_Game_score(team):
