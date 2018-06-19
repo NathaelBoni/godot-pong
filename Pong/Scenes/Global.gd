@@ -18,7 +18,7 @@ func _ready():
 	screensize = get_viewport_rect().size
 	scoreLeft = 0
 	scoreRight = 0
-	finalScore = 3
+	finalScore = 2
 
 func ResetScore():
 	scoreLeft = 0
