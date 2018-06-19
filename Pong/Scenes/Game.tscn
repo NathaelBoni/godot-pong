@@ -16,7 +16,7 @@ extents = Vector2( 327.623, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 150.815 )
 
-[node name="Game" type="Node2D" index="0"]
+[node name="Game" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -43,7 +43,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="UpperLimit" type="Area2D" parent="." index="5"]
 
 editor/display_folded = true
-position = Vector2( 320, -10 )
+position = Vector2( 320, -11 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -51,7 +51,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperLimit" index="0"]
 
@@ -60,7 +60,7 @@ shape = SubResource( 1 )
 [node name="LowerLimit" type="Area2D" parent="." index="6"]
 
 editor/display_folded = true
-position = Vector2( 320, 310 )
+position = Vector2( 320, 311 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -113,6 +113,15 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 shape = SubResource( 2 )
 
+[node name="Start" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = false
+
+[connection signal="startGame" from="." to="Ball" method="_on_Game_startGame"]
+
 [connection signal="fromBar" from="Bar1" to="Ball" method="_on_Bar1_fromBar"]
 
 [connection signal="fromBar" from="Bar2" to="Ball" method="_on_Bar2_fromBar"]
@@ -124,5 +133,7 @@ shape = SubResource( 2 )
 [connection signal="area_entered" from="LeftLimit" to="." method="_on_LeftLimit_area_entered"]
 
 [connection signal="area_entered" from="RightLimit" to="." method="_on_RightLimit_area_entered"]
+
+[connection signal="timeout" from="Start" to="." method="_on_Start_timeout"]
 
 

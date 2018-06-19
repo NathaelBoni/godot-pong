@@ -1,18 +1,18 @@
 extends Node2D
 
-var screensize
+signal score(team)
+signal startGame
+
 
 func _ready():
-	screensize = get_viewport_rect().size
 	$StartPosition1.position.x = 15
-	$StartPosition1.position.y = screensize.y/2
-	$StartPosition2.position.x = screensize.x - 15
-	$StartPosition2.position.y = screensize.y/2
+	$StartPosition1.position.y = Global.screensize.y/2
+	$StartPosition2.position.x = Global.screensize.x - 15
+	$StartPosition2.position.y = Global.screensize.y/2
 	
 	$Bar1.SetPosition($StartPosition1.position)
 	$Bar2.SetPosition($StartPosition2.position)
 	
-	#$Ball.position = $Bar1.position
 	$Ball.SetTexture(load("res://Images/ball_red.png"))
 
 func _process(delta):
@@ -20,14 +20,25 @@ func _process(delta):
 		$Bar1.SetAIPosition(delta, $Ball.position)
 	if($Bar2.isAI):
 		$Bar2.SetAIPosition(delta, $Ball.position)
-
-func positionIA(pos):
-	pass
-
+	
 func _on_LeftLimit_area_entered(area):
-	#Red goal
-	pass # replace with function body
+	Score("right")
 
 func _on_RightLimit_area_entered(area):
-	#Blue goal
-	pass # replace with function body
+	Score("left")
+
+func Score(team):
+	if(team == "left"):
+		Global.scoreLeft += 1
+	elif(team == "right"):
+		Global.scoreRight += 1
+	$Ball.ResetPosition()
+	$Ball.hide()
+	$Start.start()
+	emit_signal("score", team)
+
+func _on_Start_timeout():
+	emit_signal("startGame")
+
+func StartTimer():
+	$Start.start()

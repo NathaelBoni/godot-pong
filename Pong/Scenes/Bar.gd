@@ -6,13 +6,11 @@ export (Image) var spriteImage
 export (bool) var isAI
 
 var SPEED
-var screensize
 
 func _ready():
 	$Sprite.texture = spriteImage
-	screensize = get_viewport_rect().size
 	if(isAI):
-		SPEED = 100
+		SPEED = 50
 	else:
 		SPEED = 300
 
@@ -31,7 +29,7 @@ func SetAIPosition(delta, BallPos):
 		direction.y -= 1
 	direction = direction * SPEED
 	position += direction * delta
-	position.y = clamp(position.y, 0, screensize.y)
+	position.y = clamp(position.y, 0, Global.screensize.y)
 
 func Movement(delta):
 	var direction = Vector2()
@@ -42,7 +40,7 @@ func Movement(delta):
 	if direction.length() > 0:
         direction = direction * SPEED
 	position += direction * delta
-	position.y = clamp(position.y, 0, screensize.y)
+	position.y = clamp(position.y, 0, Global.screensize.y)
 
 func _on_Bar_area_entered(area):
 	emit_signal("fromBar", position)
