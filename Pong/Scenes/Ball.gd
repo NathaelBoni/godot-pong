@@ -22,15 +22,19 @@ func SetTexture(param):
 
 func _on_UpperLimit_area_entered(area):
 	direction.y = -direction.y
+	$CollisionLimitAudio.play()
 
 func _on_LowerLimit_area_entered(area):
 	direction.y = -direction.y
+	$CollisionLimitAudio.play()
 
 func _on_Bar1_fromBar(barPosition):
 	hitBack(barPosition, blueBall)
+	$CollisionBarAudio.play()
 
 func _on_Bar2_fromBar(barPosition):
 	hitBack(barPosition, redBall)
+	$CollisionBarAudio.play()
 	
 func hitBack(barPosition, texture):
 	direction = position-barPosition

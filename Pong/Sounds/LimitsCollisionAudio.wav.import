@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LimitsCollisionAudio.wav-eb35e02ae644cb717d479058b2088391.sample"
+
+[deps]
+
+source_file="res://Sounds/LimitsCollisionAudio.wav"
+source_md5="f5a65e9e3a900a52ca7ee32fbf89a53f"
+
+dest_files=[ "res://.import/LimitsCollisionAudio.wav-eb35e02ae644cb717d479058b2088391.sample" ]
+dest_md5="7c44454adfdc3c9c369dbf57c603c886"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

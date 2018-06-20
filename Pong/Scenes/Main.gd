@@ -12,7 +12,9 @@ func _on_Game_score(team):
 			$EndResult.text = "Left wins!"
 		else:
 			$EndResult.text = "Right wins!"
+		$MatchCheerAudio.play()
 		$EndTimer.start()
+		Global.isGameEnded = true
 	$HUD.UpdateScore()
 
 func _on_EndTimer_timeout():

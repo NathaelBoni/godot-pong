@@ -4,6 +4,7 @@ func _ready():
 	pass
 
 func _on_PlayButton_button_up():
+	Global.isGameEnded = false
 	get_tree().change_scene(Global.gameScene)
 
 func _on_SettingsButton_button_up():

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MatchCheer.wav-aee8d38fd7e9460cb2188e2aa80f5964.sample"
+
+[deps]
+
+source_file="res://Sounds/MatchCheer.wav"
+source_md5="4cc185feb3ec50ad5e2f167af8b207e3"
+
+dest_files=[ "res://.import/MatchCheer.wav-aee8d38fd7e9460cb2188e2aa80f5964.sample" ]
+dest_md5="30639f868aa1f7ef775d14f8f55a7f59"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

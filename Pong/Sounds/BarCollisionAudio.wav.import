@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BarCollisionAudio.wav-858ce647f6c879bc498f8c45508ddef9.sample"
+
+[deps]
+
+source_file="res://Sounds/BarCollisionAudio.wav"
+source_md5="73080adc65e4b65f679d0f0adad3c1d4"
+
+dest_files=[ "res://.import/BarCollisionAudio.wav-858ce647f6c879bc498f8c45508ddef9.sample" ]
+dest_md5="6f3361716ae36aa6bbea67245a45dbd1"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
