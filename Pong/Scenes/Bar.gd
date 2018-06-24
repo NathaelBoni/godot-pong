@@ -6,11 +6,21 @@ export (Image) var spriteImage
 export (bool) var isAI
 
 var SPEED
+var invincible
 
 func _ready():
 	$Sprite.texture = spriteImage
+	invincible = false
 	if(isAI):
-		SPEED = 50
+		match Global.level:
+			0:
+				SPEED = 50
+			1:
+				SPEED = 100
+			2:
+				SPEED = 200
+			3:
+				invincible = true
 	else:
 		SPEED = 300
 
@@ -23,13 +33,16 @@ func SetPosition(pos):
 
 func SetAIPosition(delta, BallPos):
 	var direction = Vector2()
-	if(BallPos.y > position.y):
-		direction.y += 1
+	if(invincible):
+		position.y = BallPos.y
 	else:
-		direction.y -= 1
-	direction = direction * SPEED
-	position += direction * delta
-	position.y = clamp(position.y, 0, Global.screensize.y)
+		if(BallPos.y > position.y):
+			direction.y += 1
+		else:
+			direction.y -= 1
+		direction = direction * SPEED
+		position += direction * delta
+		position.y = clamp(position.y, 0, Global.screensize.y)
 
 func Movement(delta):
 	var direction = Vector2()
