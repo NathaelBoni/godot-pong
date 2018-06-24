@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ScoreCheer.wav-46511a5b9580cdf975f4751806bb8341.sample"
+
+[deps]
+
+source_file="res://Sounds/ScoreCheer.wav"
+source_md5="e96ef5a4ceb3c384440b8dbf7b05bda3"
+
+dest_files=[ "res://.import/ScoreCheer.wav-46511a5b9580cdf975f4751806bb8341.sample" ]
+dest_md5="e4f03bce2ff662db09977cfbe42b81e1"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

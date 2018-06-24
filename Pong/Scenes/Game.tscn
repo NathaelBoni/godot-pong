@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Images/bar_blue.png" type="Texture" id=3]
 [ext_resource path="res://Images/bar_red.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sounds/ScoreCheer.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -119,6 +120,16 @@ process_mode = 1
 wait_time = 3.0
 one_shot = true
 autostart = false
+
+[node name="ScoreCheerAudio" type="AudioStreamPlayer2D" parent="." index="10"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="startGame" from="." to="Ball" method="_on_Game_startGame"]
 

@@ -35,10 +35,12 @@ func Score(team):
 	$Ball.ResetPosition()
 	$Ball.hide()
 	$Start.start()
+	$ScoreCheerAudio.play()
 	emit_signal("score", team)
 
 func _on_Start_timeout():
-	emit_signal("startGame")
+	if(not Global.isGameEnded):
+		emit_signal("startGame")
 
 func StartTimer():
 	$Start.start()

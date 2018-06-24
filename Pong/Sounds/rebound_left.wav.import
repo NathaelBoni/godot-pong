@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rebound_left.wav-12b730df49a39f6554440e4727b97cea.sample"
+
+[deps]
+
+source_file="res://Sounds/rebound_left.wav"
+source_md5="f5a65e9e3a900a52ca7ee32fbf89a53f"
+
+dest_files=[ "res://.import/rebound_left.wav-12b730df49a39f6554440e4727b97cea.sample" ]
+dest_md5="7c44454adfdc3c9c369dbf57c603c886"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

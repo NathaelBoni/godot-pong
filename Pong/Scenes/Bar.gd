@@ -44,3 +44,4 @@ func Movement(delta):
 
 func _on_Bar_area_entered(area):
 	emit_signal("fromBar", position)
+
