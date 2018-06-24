@@ -1,8 +1,5 @@
 extends Area2D
 
-var blueBall = load("res://Images/ball_blue.png")
-var redBall = load("res://Images/ball_red.png")
-
 var SPEED
 var direction
 
@@ -29,18 +26,17 @@ func _on_LowerLimit_area_entered(area):
 	$CollisionLimitAudio.play()
 
 func _on_Bar1_fromBar(barPosition):
-	hitBack(barPosition, blueBall)
+	hitBack(barPosition)
 	$CollisionBarAudio.play()
 
 func _on_Bar2_fromBar(barPosition):
-	hitBack(barPosition, redBall)
+	hitBack(barPosition)
 	$CollisionBarAudio.play()
 	
-func hitBack(barPosition, texture):
+func hitBack(barPosition):
 	direction = position-barPosition
 	if(SPEED < 600 && Global.isBallAccel):
 		SPEED += 10
-	SetTexture(texture)
 
 func _on_Game_startGame():
 	SPEED = Global.ballV0

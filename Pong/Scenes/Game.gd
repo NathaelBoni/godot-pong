@@ -12,8 +12,6 @@ func _ready():
 	
 	$Bar1.SetPosition($StartPosition1.position)
 	$Bar2.SetPosition($StartPosition2.position)
-	
-	$Ball.SetTexture(load("res://Images/ball_red.png"))
 
 func _process(delta):
 	if($Bar1.isAI):
