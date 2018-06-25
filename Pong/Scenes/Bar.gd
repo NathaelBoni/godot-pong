@@ -16,9 +16,9 @@ func _ready():
 			0:
 				SPEED = 50
 			1:
-				SPEED = 100
+				SPEED = 150
 			2:
-				SPEED = 200
+				SPEED = 300
 			3:
 				invincible = true
 	else:

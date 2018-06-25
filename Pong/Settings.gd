@@ -8,6 +8,8 @@ func _ready():
 	$Level/LevelMenu.add_item("Medium")
 	$Level/LevelMenu.add_item("Hard")
 	$Level/LevelMenu.add_item("Invencible")
+	
+	$Level/LevelMenu.selected = Global.level
 
 func _on_Button_button_up():
 	get_tree().change_scene(Global.menuScene)
