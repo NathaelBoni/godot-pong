@@ -18,6 +18,7 @@ var rightSound = load("res://Sounds/rebound_right.wav")
 #settings
 var ballV0 = 300
 var isBallAccel = true
+var level = 1
 
 func _ready():
 	screensize = get_viewport_rect().size
