@@ -46,6 +46,7 @@ func _on_Game_startGame():
 	show()
 
 func ResetPosition():
+	$Effect.restart()
 	position.x = Global.screensize.x/2
 	position.y = Global.screensize.y/2
 	direction = Vector2()
