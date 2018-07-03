@@ -42,3 +42,7 @@ func _on_Start_timeout():
 
 func StartTimer():
 	$Start.start()
+
+func _on_Ball_limitCollision(pos):
+	$CollisionEffect.position = pos
+	$CollisionEffect.restart()

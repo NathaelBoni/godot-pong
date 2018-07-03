@@ -3,6 +3,8 @@ extends Area2D
 var SPEED
 var direction
 
+signal limitCollision(collisionPosition)
+
 func _ready():
 	SPEED = 0
 	ResetPosition()
@@ -20,10 +22,12 @@ func SetTexture(param):
 func _on_UpperLimit_area_entered(area):
 	direction.y = -direction.y
 	$CollisionLimitAudio.play()
+	emit_signal("limitCollision", position)
 
 func _on_LowerLimit_area_entered(area):
 	direction.y = -direction.y
 	$CollisionLimitAudio.play()
+	emit_signal("limitCollision", position)
 
 func _on_Bar1_fromBar(barPosition):
 	hitBack(barPosition)
@@ -46,6 +50,7 @@ func _on_Game_startGame():
 	show()
 
 func ResetPosition():
+	$Effect.restart()
 	position.x = Global.screensize.x/2
 	position.y = Global.screensize.y/2
 	direction = Vector2()
