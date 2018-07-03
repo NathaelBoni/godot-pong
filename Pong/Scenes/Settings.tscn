@@ -38,8 +38,6 @@ align = 1
 
 [node name="BallV0" type="Node" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="TextBallV0" type="TextEdit" parent="BallV0" index="0"]
 
 anchor_left = 0.0
@@ -122,6 +120,8 @@ align = 1
 
 [node name="IsBallAccel" type="Node" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="ButtonIsBallAccel" type="CheckButton" parent="IsBallAccel" index="0"]
 
 anchor_left = 0.0
@@ -168,6 +168,8 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [node name="Level" type="Node" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="LevelLabel" type="Label" parent="Level" index="0"]
 
@@ -217,6 +219,63 @@ align = 0
 items = [  ]
 selected = -1
 
+[node name="FinalScore" type="Node" parent="." index="4"]
+
+[node name="FinalScoreLabel" type="Label" parent="FinalScore" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 220.0
+margin_top = 72.0
+margin_right = 289.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Final Score"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="FinalScoreText" type="TextEdit" parent="FinalScore" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 224.0
+margin_top = 93.0
+margin_right = 292.0
+margin_bottom = 116.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = ""
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+
 [connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
 
 [connection signal="button_up" from="BallV0/OkBallV0" to="." method="_on_OkBallV0_button_up"]
@@ -224,5 +283,7 @@ selected = -1
 [connection signal="toggled" from="IsBallAccel/ButtonIsBallAccel" to="." method="_on_CheckButton_toggled"]
 
 [connection signal="item_selected" from="Level/LevelMenu" to="." method="_on_LevelMenu_item_selected"]
+
+[connection signal="text_changed" from="FinalScore/FinalScoreText" to="." method="_on_FinalScoreText_text_changed"]
 
 
