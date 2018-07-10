@@ -12,6 +12,12 @@ func _ready():
 	
 	$Bar1.SetPosition($StartPosition1.position)
 	$Bar2.SetPosition($StartPosition2.position)
+	
+	$Bar1.SetPlayer(1)
+	if(Global.isTwoP):
+		$Bar2.SetPlayer(2)
+	else:
+		$Bar2.SetPlayer(0)
 
 func _process(delta):
 	if($Bar1.isAI):

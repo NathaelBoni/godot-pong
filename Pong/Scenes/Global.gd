@@ -15,6 +15,8 @@ var menuScene = "res://Scenes/Menu.tscn"
 var leftSound = load("res://Sounds/rebound_left.wav")
 var rightSound = load("res://Sounds/rebound_right.wav")
 
+var isTwoP = false
+
 #settings
 var ballV0 = 300
 var isBallAccel = true
