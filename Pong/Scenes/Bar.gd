@@ -3,12 +3,15 @@ extends Area2D
 signal fromBar(barPosition)
 
 export (Image) var spriteImage
-export (bool) var isAI
 
 var SPEED
 var invincible
+var isAI
+var player
 
 func _ready():
+	player = 1
+	isAI = false
 	$Sprite.texture = spriteImage
 	invincible = false
 	if(isAI):
@@ -28,6 +31,12 @@ func _process(delta):
 	if(!isAI):
 		Movement(delta)
 
+func SetPlayer(p):
+	if(p == 0):
+		isAI = true
+	else:
+		player = p
+
 func SetPosition(pos):
 	position = pos
 
@@ -46,10 +55,16 @@ func SetAIPosition(delta, BallPos):
 
 func Movement(delta):
 	var direction = Vector2()
-	if Input.is_action_pressed("ui_down"):
-        direction.y += 1
-	if Input.is_action_pressed("ui_up"):
-        direction.y -= 1
+	if(player == 1):
+		if Input.is_action_pressed("ui_down"):
+	        direction.y += 1
+		if Input.is_action_pressed("ui_up"):
+	        direction.y -= 1
+	if(player == 2):
+		if Input.is_action_pressed("ui_down2"):
+	        direction.y += 1
+		if Input.is_action_pressed("ui_up2"):
+	        direction.y -= 1
 	if direction.length() > 0:
         direction = direction * SPEED
 	position += direction * delta
